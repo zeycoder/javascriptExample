@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>1 Videoda JavaScript</title>
+    <style>
+        .header{
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 18px;
+            background: red;
+        }
+        .container{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>1 Videoda Javascript</h1>
+    </div>
+    <hr>
+    <div class="container">
+        <button onclick="tikla()">Tıkla</button>
+        <button onclick="this.innerHTML='Butona Tıklandı'">Tıklayınız</button>
+        <button onclick="tiklayin(this)">Tıklar mısınız</button>
+        
+        <p id="para1">Paragraf 1</p>
+
+        <button onclick="renkdegis()">selam</button>
+        <p id="para">Ay yeter bıktım</p>
+        <button onmouseover="mouseover()" onmouseout="mouseout()">Tıklama artık</button>
+        
+        <form name="form1" action="gonder.php" method="POST" onsubmit="return dogrula();">
+            <input type="text" name="isim">
+            <button type="submit">Gönder</button>
+        </form>
+
+    </div>
+    <script>
+        /*
+        var sayi1=20
+        var sayi2=30
+        var sayi3=40
+
+        alert("Toplamları:"+(sayi1+sayi2+sayi3))
+
+        var a="Java"
+        var b="Script"
+        alert(a+b)
+
+        var array=["Java","Python","C#","C"]
+        alert(array)
+        alert(array[1])
+        array.push("Go")
+        alert(array)
+        alert(array.length)
+        */
+        /*
+        for(var i = 0 ; i < 4 ; i++){
+            console.log("i değeri:"+i)
+        }
+
+        var j=0;
+        while(j<8)
+        {
+            console.log("j değeri:"+ j)
+            j+=1;
+        }
+        var sayilar=[1,2,3,11,12,13];
+        sayilar.forEach(function(sayi){
+            console.log(sayi);
+        })
+        */
+       /*
+        var a=5;
+        var b=6;
+        if(a==b){
+            console.log("eşittir");
+        }
+        else{
+            console.log("eşit değildir");
+        }
+        if(2=='2'){
+            console.log("eşittir .")
+        }
+        if( 2 === '2'){
+            console.log("kesinlikle eşittir.")
+        }
+        if(2===2){
+            console.log("tabi ki eşittir ..")
+        }
+        */
+       /*
+        function selamla(){
+            console.log("Merhaba, nasılsın? ")
+        }
+        selamla();
+        selamla();
+        */
+        /*
+        function selam(isim){
+            console.log("merhaba "+isim)
+        }
+        selam("zeynep")
+        */
+       /*
+       function topla(a,b,c){
+           console.log("Toplamları:"+(a+b+c))
+        }
+        topla(3,4,5);
+        */
+       /*
+        var calisan={
+            isim:"zeynep",
+            soyisim:"arslan",
+            numara:00001,
+            diller:["python","c#","html","css","javascript"],
+            adres:{
+                cadde:"fevzi çakmak",
+                sokak:"siteler 5.sokak"
+            },
+            isimBilgileri:function(){
+                return "İsim:"+ this.isim + " soyisim:"+this.soyisim;
+
+            }
+        };
+        console.log(calisan.isim);
+        console.log(calisan.soyisim);
+        console.log(calisan.numara);
+        console.log(calisan.diller);
+        console.log(calisan.adres.cadde);
+        console.log(calisan.adres);
+        console.log(calisan.adres.sokak);
+        console.log(calisan.isimBilgileri());
+        */
+        /*
+        var calisan = new Object();
+
+        calisan.isim="zeynep"
+        calisan.soyismi="arslan"
+        calisan.isimBilgileri=function(){
+            return"isim bilgileri : "+this.isim+" "+this.soyismi;
+
+        }
+        console.log(calisan.isim);
+        console.log(calisan.soyismi);
+        console.log(calisan.isimBilgileri());
+        */
+        /*
+        function Calisan(isim,soyisim,numara){
+            this.isim=isim;
+            this.soyisim=soyisim;
+            this.numara=numara;
+            this.bilgileriGoster=function(){
+                return "İsim: "+this.isim+
+                "\nSoyisim: "+this.soyisim+
+                "\nNumara: "+this.numara                           
+            }
+
+        }
+        var calisan1=new Calisan("Zeynep","Arslan",001);
+        var calisan2=new Calisan("Melek Erva","Arslan",002);
+        console.log(calisan1.bilgileriGoster());
+        console.log(calisan2.bilgileriGoster());
+        */
+        
+        function tikla(){
+            alert("Butona Tıklandı..")
+        }
+        function tiklayin(elementim){
+            elementim.innerHTML = "Butona Tıkladığınız için Teşekkürler :)"
+        }
+        function renkdegis(){
+            var elementcik =document.getElementById("para1");
+            elementcik.style.color="red";
+        }
+        function mouseover(){
+            var element=document.getElementById("para");
+            element.innerHTML="Mouse Over Effect";
+        }
+        function mouseout(){
+            var element=document.getElementById("para");
+            element.innerHTML="Mouse Out Effect";
+        }
+
+        function dogrula(){
+            var form=document.forms["form1"];
+            var deger=form["isim"].value;
+            if(deger==""){
+                alert("isim alanı boş olamaz");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
